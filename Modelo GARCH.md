@@ -1,3 +1,5 @@
+# Construcción de Modelo de Heterocedasticidad Condicional Autoregresiva Generalizada
+
 # Importar librerías necesarias
 import pandas as pd
 import numpy as np
