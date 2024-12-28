@@ -70,3 +70,5 @@ if __name__ == "__main__":
       plot_correlation_matrix(log_returns, etfs)
   except Exception as e:
       print(f"Error durante el análisis: {e}")
+
+![image](https://github.com/user-attachments/assets/357648ce-e51d-4746-99b2-5a0395d154b5)
