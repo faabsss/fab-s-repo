@@ -1,3 +1,0 @@
-DATABASE
-- Script de Python que genera datos de simulación para el proyecto; bajo el contexto de operatividad en una entidad bancaria.
-- Comprende de cinco tablas relacionadas: Clientes, solicitudes de créditos, evaluaciones de riesgo, historial crediticio y pagos.
