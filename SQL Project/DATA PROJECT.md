@@ -1,24 +1,46 @@
-DROP TABLE IF EXISTS pagos;
-DROP TABLE IF EXISTS historial_crediticio;
-DROP TABLE IF EXISTS evaluaciones_riesgo;
-DROP TABLE IF EXISTS solicitudes_credito;
-DROP TABLE IF EXISTS clientes;
+# **Database de una entidad bancaria**
+## Clientes
+- Contiene información sobre la identificación, sexo, fecha de nacimiento e ingreso mensual de los clientes.
+## Solicitudes de crédito
+- Comprende de información relacionada a la identificación del cliente, id de solicitud, monto solicitado, plazo en meses y tasa de interés.
+## Evaluaciones de riesgo
+- Contiene datos de id de evaluación y solicitud, score y nivel de riesgo y, maneja datos de estado de evaluación de créditos solicitados.
+## Pagos
+- Cuenta con información de id de pagos y solicitud, así como el monto pagado y los métodos de pago.
+## Historial crediticio
+- Comprende de datos sobre el id del historial y cliente, el monto total, la cantidad de préstamos y el historial de pagos, el cual puede referirse como 'Bueno', 'Regular' y 'Malo'
 
+
+## Creación de la base de datos
+```sql
+CREATE DATABASE BANK
+```
+**Indicamos que utilizaremos la base de datos denominada BANK:**
+```sql
+USE BANK;
+```
+## Creación de las tablas
+**Creamos la tabla 'clientes':**
+```sql
 CREATE TABLE clientes (
     id_cliente SERIAL PRIMARY KEY,
     sexo CHAR(1) CHECK (sexo IN ('M', 'F')),
     fecha_nacimiento DATE NOT NULL,
     ingreso_mensual INT CHECK (ingreso_mensual BETWEEN 1500 AND 10000)
 );
-
+```
+**Creamos la tabla 'solicitudes_credito':**
+```sql
 CREATE TABLE solicitudes_credito (
     id_solicitud SERIAL PRIMARY KEY,
     id_cliente INT REFERENCES clientes(id_cliente) ON DELETE CASCADE,
-    monto_solicitado DECIMAL(15,2) NOT NULL,  -- Permite préstamos más altos
+    monto_solicitado DECIMAL(15,2) NOT NULL,  
     plazo_meses INT CHECK (plazo_meses > 0),
-    tasa_interes DECIMAL(5,2) CHECK (tasa_interes > 0)  -- Ahora permite tasas mayores a 1%
+    tasa_interes DECIMAL(5,2) CHECK (tasa_interes > 0)  
 );
-
+```
+**Creamos la tabla 'evaluaciones_riesgo':**
+```sql
 CREATE TABLE evaluaciones_riesgo (
     id_evaluacion SERIAL PRIMARY KEY,
     id_solicitud INT REFERENCES solicitudes_credito(id_solicitud) ON DELETE CASCADE,
@@ -27,25 +49,33 @@ CREATE TABLE evaluaciones_riesgo (
     estado_creditos VARCHAR(10) CHECK (estado_creditos IN ('Aprobado', 'Pendiente', 'Rechazado')),
     comentarios TEXT
 );
-
+```
+**Creamos la tabla 'pagos':**
+```sql
 CREATE TABLE pagos (
     id_pago SERIAL PRIMARY KEY,
     id_solicitud INT REFERENCES solicitudes_credito(id_solicitud) ON DELETE CASCADE,
     monto_pagado DECIMAL(15,2) NOT NULL,
     metodo_pago VARCHAR(50) CHECK (metodo_pago IN ('Transferencia', 'Tarjeta', 'Efectivo'))
 );
-
+```
+**Por último, creamos la tabla 'historial_crediticio':**
+```sql
 CREATE TABLE historial_crediticio (
     id_historial SERIAL PRIMARY KEY,
     id_cliente INT REFERENCES clientes(id_cliente) ON DELETE CASCADE,
-    monto_total DECIMAL(15,2),  -- Permitir montos mayores
+    monto_total DECIMAL(15,2), 
     cantidad_prestamos INT CHECK (cantidad_prestamos >= 0),
     historial_pagos VARCHAR(20) CHECK (historial_pagos IN ('Bueno', 'Regular', 'Malo'))
 );
+```
 
+## Inserción de información en las tablas generadas
+Luego de crear y parametrizar cada tabla en función a los tipos de datos, realizaremos la inserción de información (en las tablas).
+- Cabe resaltar que, los datos fueron generados a través de un script en código Python. Se encuentra en el siguiente enlace: https://github.com/faabsss/fab-s-repo/blob/main/SQL%20Project%2Fscripts%2FGenerador%20de%20datos%20para%20database%20de%20proyecto%20de%20an%C3%A1lisis%20de%20datos%20en%20SQL.ipynb
 
---- INSERCIÓN DE INFORMACIÓN EN LAS TABLAS
-
+**Agregamos información a la tabla 'clientes'**
+```sql
 INSERT INTO clientes (id_cliente, sexo, fecha_nacimiento, ingreso_mensual) VALUES
 (1, 'M', '1979-06-04', 6762.08),
 (2, 'F', '1978-12-25', 9935.54),
@@ -247,7 +277,9 @@ INSERT INTO clientes (id_cliente, sexo, fecha_nacimiento, ingreso_mensual) VALUE
 (198, 'F', '1975-10-16', 6335.72),
 (199, 'F', '1972-03-19', 3341.3),
 (200, 'M', '1972-06-19', 8190.45);
-
+```
+**Continuamos con la tabla 'solicitudes_credito':**
+```sql
 INSERT INTO solicitudes_credito (id_cliente, monto_solicitado, plazo_meses, tasa_interes) VALUES
 (1, 31860.39, 24, 3.99),
 (2, 1161.04, 48, 3.5),
@@ -449,7 +481,9 @@ INSERT INTO solicitudes_credito (id_cliente, monto_solicitado, plazo_meses, tasa
 (198, 14707.3, 36, 4.03),
 (199, 14382.39, 60, 17.88),
 (200, 13848.35, 24, 13.05);
-
+```
+**Procedemos con la tabla 'evaluaciones_riesgo':**
+```sql
 INSERT INTO evaluaciones_riesgo (id_solicitud, score_riesgo, nivel_riesgo, estado_creditos, comentarios) VALUES
 (1, 705, 'Medio', 'Aprobado', 'Evaluación de riesgo: Medio.'),
 (2, 896, 'Bajo', 'Pendiente', 'Evaluación de riesgo: Bajo.'),
@@ -651,7 +685,9 @@ INSERT INTO evaluaciones_riesgo (id_solicitud, score_riesgo, nivel_riesgo, estad
 (198, 680, 'Medio', 'Pendiente', 'Evaluación de riesgo: Medio.'),
 (199, 500, 'Medio', 'Aprobado', 'Evaluación de riesgo: Medio.'),
 (200, 791, 'Bajo', 'Aprobado', 'Evaluación de riesgo: Bajo.');
-
+```
+**Seguimos con la tabla 'pagos':**
+```sql
 INSERT INTO pagos (id_solicitud, monto_pagado, metodo_pago) VALUES
 (2, 520.43, 'Efectivo'),
 (2, 1758.1, 'Tarjeta'),
@@ -1446,7 +1482,9 @@ INSERT INTO pagos (id_solicitud, monto_pagado, metodo_pago) VALUES
 (200, 1985.23, 'Tarjeta'),
 (200, 1272.03, 'Tarjeta'),
 (200, 1980.95, 'Transferencia');
-
+```
+**Y terminamos con la tabla 'historial_crediticio':**
+```sql
 INSERT INTO historial_crediticio (id_cliente, monto_total, cantidad_prestamos, historial_pagos) VALUES
 (1, 92470.94, 2, 'Bueno'),
 (2, 11570.59, 4, 'Regular'),
@@ -1648,3 +1686,4 @@ INSERT INTO historial_crediticio (id_cliente, monto_total, cantidad_prestamos, h
 (198, 45633.64, 1, 'Regular'),
 (199, 35774.67, 1, 'Bueno'),
 (200, 94038.41, 3, 'Regular')
+```
