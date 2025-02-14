@@ -1,6 +1,8 @@
 # **SQL Programming Project**
-![Python](https://img.shields.io/badge/Python-3.13-blue)
-![SQL](https://img.shields.io/badge/SQL-PostgreSQL-orange)
+![Python](https://img.shields.io/badge/Python-3.13-yellow)
+![SQL](https://img.shields.io/badge/SQL-PostgreSQL-blue)
+![Status](https://img.shields.io/badge/Status-InProgress-orange)
+
 
 ## **Descripción y objetivo de proyecto**
 
