@@ -72,7 +72,7 @@ CREATE TABLE historial_crediticio (
 
 ## Inserción de información en las tablas generadas
 Luego de crear y parametrizar cada tabla en función a los tipos de datos, realizaremos la inserción de información (en las tablas).
-- Cabe resaltar que, los datos fueron generados a través de un [script en código Python](https://github.com/faabsss/fab-s-repo/blob/d9c74294bc6cf3c17f18ad12ffe9f94e40172602/SQL%20Programming%20Project/pyscript-data/Generador%20de%20datos%20para%20database%20de%20proyecto%20de%20an%C3%A1lisis%20de%20datos%20en%20SQL.ipynb)
+- Cabe resaltar que, los datos fueron generados a través de un [script en código Python](https://github.com/faabsss/fab-s-repo/blob/65a3e6bd6a156d2e4f07dfcc385036c3a2c5928f/SQL%20Programming%20Project/pyscript-data/Generador%20de%20datos%20para%20proyecto%20en%20lenguaje%20SQL.md).
 
 **Agregamos información a la tabla 'clientes'**
 ```sql
