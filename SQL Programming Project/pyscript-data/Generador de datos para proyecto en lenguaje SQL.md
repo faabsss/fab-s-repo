@@ -9,7 +9,7 @@ import pandas as pd
 from datetime import datetime, timedelta
 ```
 
-### **Creación de tabla 1: Clientes**
+### **Creación de datos tabla 1: Clientes**
 
 ```python
 def generar_fecha_nacimiento():
@@ -26,7 +26,7 @@ for cliente_id in range(1, 201):  # 200 clientes
     # Cada registro: (ID_Cliente, Sexo, Fecha_Nacimiento, Ingreso)
     clientes_data.append((cliente_id, sexo, fecha_nacimiento, ingreso_mensual))
 ```
-### **Creación de tabla 2: Solicitudes de Crédito**
+### **Creación de datos tabla 2: Solicitudes de Crédito**
 
 ```python
 solicitudes_data = []
@@ -42,7 +42,7 @@ for cliente_id, _, _, ingreso in clientes_data:
     solicitudes_data.append((cliente_id, monto_solicitado, plazo_meses, tasa_interes))
 ```
 
-### **Creación de tabla 3: Evaluaciones de Riesgo**
+### **Creación de datos tabla 3: Evaluaciones de Riesgo**
 
 ```python
 evaluaciones_data = []
@@ -73,7 +73,7 @@ for idx, (id_cliente, monto, plazo, tasa) in enumerate(solicitudes_data, start=1
     estados_solicitud.append((idx, estado))
     evaluaciones_data.append((idx, score_riesgo, nivel_riesgo, estado, comentarios))
 ```
-### **Creación de tabla 4: Pagos**
+### **Creación de datos tabla 4: Pagos**
 
 ```python
 pagos_data = []
@@ -88,7 +88,7 @@ for id_solicitud, estado in estados_solicitud:
             pagos_data.append((id_solicitud, monto_pagado, metodo_pago))
 ```
 
-### **Creación de tabla 5: Historial crediticio**
+### **Creación de datos tabla 5: Historial crediticio**
 
 ```python
 historial_crediticio_data = []
@@ -149,6 +149,3 @@ files.download('evaluaciones_riesgo.csv')
 files.download('pagos.csv')
 files.download('historial_crediticio.csv')
 ```
-
-
-
