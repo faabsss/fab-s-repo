@@ -27,7 +27,8 @@
 1. pyscript-data: Esta carpeta contiene el archivo denominado 'Generador de datos para proyecto en lenguaje SQL.md', el cual muestra cómo se crearon los datos que se muestran en las tablas que conforman la base de datos.
 2. sqlscript-data: En esta carpeta se encuentra el archivo 'DATA.md', que explica y muestra el código de creación de tablas e inserción de información en el lenguaje de programación SQL.
 3. sql-queries: Es la carpeta que contiene las consultas en SQL. Comprende de seis archivos.
-4. archivos-csv: Contiene los datos con los que se está trabajando en este proyecto.
+4. insights-analysis: Expone las próximas investigaciones a realizar. Contiene un documentos en .md
+5. archivos-csv: Contiene los datos con los que se está trabajando en este proyecto.
 
 ## **Requisitos y observaciones**
 
