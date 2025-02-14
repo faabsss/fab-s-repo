@@ -1,4 +1,6 @@
 # **SQL Programming Project**
+![Python](https://img.shields.io/badge/Python-3.13-blue)
+![SQL](https://img.shields.io/badge/SQL-PostgreSQL-orange)
 
 ## **Descripción y objetivo de proyecto**
 
@@ -28,3 +30,4 @@
 Para ejecutar el proyecto de manera local, asegúrate de instalar las siguientes dependencias:
 - Python 3.x
 - PostgreSQL, pgAdmin 4 8.x
+
