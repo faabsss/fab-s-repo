@@ -6,7 +6,7 @@
 
 ## **Descripción y objetivo de proyecto**
 
-- Este documento contiene una serie de tareas estructuradas con el objetivo de practicar consultas en el lenguaje de programación SQL y desarrollar habilidades de análisis de datos.
+- Este proyecto consiste en la creación de datos y tablas y, en la ejecución de tareas estructuradas con el objetivo de practicar *queries* en el lenguaje de programación SQL. Además de, obtener *insights* que sirvan como siguientes pasos en el desarrollo de habilidades de análisis de datos. De tal forma que, se pueda implementar modelos de aprendizaje automático, en caso sea posible.
   
 - Tras la creación de una [database](https://github.com/faabsss/fab-s-repo/blob/66e418a6c6c14e1f053a3f8be3d3865f02106266/SQL%20Programming%20Project/sqlscript-data/DATA.md), se desarrollarán consultas que permitirán acceder a información para realizar:
 
@@ -27,10 +27,12 @@
 1. pyscript-data: Esta carpeta contiene el archivo denominado 'Generador de datos para database de proyecto de análisis de datos en SQL.ipynb', el cual muestra cómo se crearon los datos que se muestran en las tablas que conforman la base de datos.
 2. sqlscript-data: En esta carpeta se encuentra el archivo 'DATA.md', que explica y muestra el código de creación de tablas e inserción de información en el lenguaje de programación SQL.
 3. sql-queries: Es la carpeta que contiene las consultas en SQL. Comprende de seis archivos.
+4. archivos-csv: Contiene los datos con los que se está trabajando en este proyecto.
 
-## **Requisitos**
+## **Requisitos y observaciones**
 Para ejecutar el proyecto de manera local, asegúrate de instalar las siguientes dependencias:
 - Python 3.x
 - PostgreSQL 17.3
 - pgAdmin 4 9.0
 
+  - ! La generación de datos es aleatoria. Es decir, si ejecutas el código ubicado en la carpeta 'pyscript-data', obtendrás diferentes datos. Si deseas emplear los mismos datos, los podrás encontrar en la carpeta 'archivos-csv'.
