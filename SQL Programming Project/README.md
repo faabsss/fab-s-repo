@@ -1,6 +1,6 @@
 # **SQL Programming Project**
 
-## **Descripción de proyecto**
+## **Descripción y objetivo de proyecto**
 
 - Este documento contiene una serie de tareas estructuradas con el objetivo de practicar consultas en el lenguaje de programación SQL y desarrollar habilidades de análisis de datos.
   
