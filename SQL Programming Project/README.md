@@ -31,5 +31,6 @@
 ## **Requisitos**
 Para ejecutar el proyecto de manera local, asegúrate de instalar las siguientes dependencias:
 - Python 3.x
-- PostgreSQL, pgAdmin 4 8.x
+- PostgreSQL 17.3
+- pgAdmin 4 9.0
 
