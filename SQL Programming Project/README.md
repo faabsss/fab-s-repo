@@ -24,15 +24,17 @@
 
 > Las carpetas se enumerarán en orden de revisión, posterior a la lectura de este READ.ME:
 
-1. pyscript-data: Esta carpeta contiene el archivo denominado 'Generador de datos para database de proyecto de análisis de datos en SQL.ipynb', el cual muestra cómo se crearon los datos que se muestran en las tablas que conforman la base de datos.
+1. pyscript-data: Esta carpeta contiene el archivo denominado 'Generador de datos para proyecto en lenguaje SQL.md', el cual muestra cómo se crearon los datos que se muestran en las tablas que conforman la base de datos.
 2. sqlscript-data: En esta carpeta se encuentra el archivo 'DATA.md', que explica y muestra el código de creación de tablas e inserción de información en el lenguaje de programación SQL.
 3. sql-queries: Es la carpeta que contiene las consultas en SQL. Comprende de seis archivos.
 4. archivos-csv: Contiene los datos con los que se está trabajando en este proyecto.
 
 ## **Requisitos y observaciones**
+
 Para ejecutar el proyecto de manera local, asegúrate de instalar las siguientes dependencias:
 - Python 3.x
+  - Librerías: pandas, 
 - PostgreSQL 17.3
 - pgAdmin 4 9.0
 
-  - ! La generación de datos es aleatoria. Es decir, si ejecutas el código ubicado en la carpeta 'pyscript-data', obtendrás diferentes datos. Si deseas emplear los mismos datos, los podrás encontrar en la carpeta 'archivos-csv'.
+> ❗ La generación de datos es aleatoria. Es decir, si ejecutas el código ubicado en la carpeta 'pyscript-data', obtendrás diferentes datos. Si deseas emplear los mismos datos, los podrás encontrar en la carpeta 'archivos-csv'.
