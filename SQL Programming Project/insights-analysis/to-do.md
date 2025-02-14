@@ -2,11 +2,10 @@
 
 ### **📌 Insights que se pueden extraer:**
 
- - ¿Qué características tienen los clientes que reciben aprobaciones?
- - ¿Cómo influye el score de riesgo en la tasa de interés y en la aprobación del crédito?
- - ¿Existen patrones en los pagos según método y nivel de riesgo?
+ - Relación entre score de riesgo y probabilidad de aprobación.
+ - Análisis de ingresos vs. tasas de interés aprobadas.
+ - Impacto del historial crediticio en la aprobación de créditos.
 
 ### **🤖 Posibilidad de Machine Learning:**
-
- - Podría implementarse un modelo de clasificación para predecir si un crédito será aprobado en función de las variables disponibles.
- - Podría ser a través de un árbol de decisión o regresión logística.
+ - Regresión Logística: Predecir si una solicitud de crédito será aprobada o rechazada basado en características del cliente y del crédito.
+ - Árbol de Decisión: Analizar qué variables (score, historial, ingresos) influyen más en la decisión de aprobación.
