@@ -1,5 +1,8 @@
 ## **Creación de datos para una database**
 
+![Python](https://img.shields.io/badge/Python-3.13-yellow)
+![Status](https://img.shields.io/badge/Status-Complete-green)
+
 ```python
 import random
 import pandas as pd
