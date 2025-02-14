@@ -1,4 +1,8 @@
 # **Database de una entidad bancaria**
+
+![SQL](https://img.shields.io/badge/SQL-PostgreSQL-blue)
+![Status](https://img.shields.io/badge/Status-Complete-green)
+
 ## Clientes
 - Contiene información sobre la identificación, sexo, fecha de nacimiento e ingreso mensual de los clientes.
 ## Solicitudes de crédito
