@@ -34,7 +34,7 @@
 
 Para ejecutar el proyecto de manera local, asegúrate de instalar las siguientes dependencias:
 - Python 3.x
-  - Librerías: pandas, scikit-learn, matplotlib, seaborn, 
+  - Librerías: pandas, scikit-learn, matplotlib y seaborn.
 - PostgreSQL 17.3
 - pgAdmin 4 9.0
 
