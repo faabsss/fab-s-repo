@@ -1,4 +1,6 @@
 # **Construcción del Modelo de Heterocedasticidad Condicional Autorregresiva Generalizada**
+![Python](https://img.shields.io/badge/Python-3.13-yellow)
+![Status](https://img.shields.io/badge/Status-Complete-green)
 
 Es un modelo econométrico que permite evaluar y modelar la volatilidad en series de tiempo financieras. Plantea que existe autocorrelación en la varianza de series temporales y; que esta no es constante en el tiempo. De manera que, reconoce que la volatilidad financiera no es uniforme y que los periodos de alta volatilidad tiende a generar clústeres.
 La varianza depende tanto de errores pasados como de sus valores tomados en el pasado, puesto que los mercados no se comportan únicamente de manera aleatoria.
@@ -6,8 +8,8 @@ La varianza depende tanto de errores pasados como de sus valores tomados en el p
 ## **Especificación del modelo**
 
 Orden del GARCH(p, q):
-> - p: Número de términos autorregresivos de la varianza (GARCH).
-> - q: Número de términos de los errores al cuadrado (ARCH).
+> - *p*: Número de términos autorregresivos de la varianza (GARCH).
+> - *q*: Número de términos de los errores al cuadrado (ARCH).
 
 ## **Distribución de los errores:**
 
@@ -16,24 +18,25 @@ Orden del GARCH(p, q):
 - Distribución Generalizada de Errores (GED).
   
 **Principales propiedades**
-- No estacionariedad en la varianza.
-- Estacionariedad en la media: La serie debe ser estacionaria en su componente de media. Caso contrario, se deben aplicar transformaciones como la diferenciación (para eliminar tendencias) o transformaciones log, Box-Cox para estabilizar la media.
-- Ausencia de autocorrelación en la media: Si hay autocorrelación, primero se debe modelar la media con un proceso ARMA(p,q) mediante un modelo ARMA-GARCH
+- **No estacionariedad** en la varianza.
+- **Estacionariedad en la media:** La serie debe ser estacionaria en su componente de media. Caso contrario, se deben aplicar transformaciones como la diferenciación (para eliminar tendencias) o transformaciones log, Box-Cox para estabilizar la media.
+- **Ausencia de autocorrelación en la media:** Si hay autocorrelación, primero se debe modelar la media con un proceso ARMA(p,q) mediante un modelo ARMA-GARCH
+  
 - Alpha debe ser positivo, así garantiza una varianza positiva.
 - Los sucesos más recientes generan mayor efecto.
-- La sumatoria de alpha y beta deben de permanecer entre 0 y 1
+- La sumatoria de alpha y beta debe de permanecer entre 0 y 1
 
 ## **Parámetros que se estiman en un modelo GARCH(p, q)**
-- μ (mu): Representa la media condicional de la serie temporal
-- ω (omega): Es el término constante en la ecuación de la varianza condicional.
-- α (alfa): Son los coeficientes de los términos ARCH; es decir, de los errores pasados al cuadrado.
-- β (beta): Son los coeficientes de los términos GARCH; es decir, de la volatilidad condicional pasada.
+- *μ* (mu): Representa la media condicional de la serie temporal
+- *ω* (omega): Es el término constante en la ecuación de la varianza condicional.
+- *α* (alfa): Son los coeficientes de los términos ARCH; es decir, de los errores pasados al cuadrado.
+- *β* (beta): Son los coeficientes de los términos GARCH; es decir, de la volatilidad condicional pasada.
   
 ## **Pruebas preliminares**
-- Test de estacionariedad: Aplicar pruebas como ADF (Augmented Dickey-Fuller) o KPSS para verificar estacionariedad en la media.
-- Detección de heterocedasticidad: Gráficos de autocorrelación (ACF/PACF) de los residuos al cuadrado.
-- Test ARCH-LM (Lagrange Multiplier) para confirmar la presencia de efectos ARCH/GARCH.
-- Distribución de los residuos: Verificar si presentan colas pesadas (usar curtosis) o asimetría, lo que sugiere usar distribuciones no normales (ej.: t-Student, GED).
+- **Test de estacionariedad:** Aplicar pruebas como ADF (Augmented Dickey-Fuller) o KPSS para verificar estacionariedad en la media.
+- **Detección de heterocedasticidad:** Gráficos de autocorrelación (ACF/PACF) de los residuos al cuadrado.
+- **Test ARCH-LM (Lagrange Multiplier)** para confirmar la presencia de efectos ARCH/GARCH.
+- **Distribución de los residuos:** Verificar si presentan colas pesadas (usar curtosis) o asimetría, lo que sugiere usar distribuciones no normales (ej.: t-Student, GED).
 
 ## **Evaluación de la pertinencia del modelo**
 - **Diagnóstico de residuos:**
