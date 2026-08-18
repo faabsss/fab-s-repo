@@ -1,21 +1,6 @@
 # ==============================================================
 # SCRIPT V7 — CONCENTRACIÓN INDUSTRIAL Y RENDIMIENTO BURSÁTIL
 # EN LA BVL 2013-2025
-# CORRECCIONES V6 → V7:
-#   FIX-1  OBS2 interno en estimar_modelo(): comparación era
-#           EA one-way vs EF two-way (INVÁLIDA). Corregido a
-#           EF one-way vs EF two-way (comparación homogénea).
-#   FIX-2  Diagnóstico explícito de inversión de signo EF/EA
-#           para HP/H1 añadido dentro de estimar_modelo().
-#   FIX-3  panel_n6 hardcodeado en filtro Mundlak → panel_data.
-#   FIX-4  Test dinámico 5C: documenta explícitamente que usa
-#           EF within para todas las DV (elección consciente).
-#   FIX-5  NAs en N=6 verificados explícitamente antes de Parte 5.
-#   FIX-6  VIF corregido: sobre variables within-demeaned
-#           (además del pooled como referencia).
-#   FIX-7  Parte 2 actualizada: SW selectivo (HHI y riesgo_pburs)
-#           reemplaza JB como test formal; JB queda descriptivo.
-#   FIX-8  Parte 8 (OLS + avPlots) eliminada del script.
 # ==============================================================
 
 rm(list = ls())
